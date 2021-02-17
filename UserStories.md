@@ -7,3 +7,5 @@ US003 - As a player, I want to be able to use explosive rounds so that I can dam
 US004 - As a player, I want to be able to choose different models so that I can feel unique
 
 US005 - As a player, I want to be able to see my stats(like speed) so that I can better understand the game
+
+US006 - As a player, I want the tanks to move and behave more like tanks so that the game is more immersive
