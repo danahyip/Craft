@@ -1,21 +1,21 @@
 
-US001 Task 001 - add in the objects/effects of cannon fire
+US001 Task 001 - add in the objects/effects of cannon fire - 3 pts
 
-US001 & US002 Task 002 - add in rules for damage to players
+US001 & US002 Task 002 - add in rules for damage to players - 2 pts
 
-US001 Task 003 - add in visuals for the cannon shell
+US001 Task 003 - add in visuals for the cannon shell - 3 pts
 
-US001 Task 004 - add in visuals for shell impact
+US001 Task 004 - add in visuals for shell impact - 3 pts
 
-US001 & US003 Task 005 - add in rules for damage to terrain
+US001 & US003 Task 005 - add in rules for damage to terrain - 2 pts
 
-US001 & US003 Task 006 - add in trajectory calculation
+US001 & US003 Task 006 - add in trajectory calculation - 3 pts
 
-US001 Task 007 - add health loss on shell impact
+US001 Task 007 - add health loss on shell impact - 2 pts
 
-US001 Task 008 - add visual for taking damage
+US001 Task 008 - add visual for taking damage - 3 pts
 
-US002 Task 009 - add in health bar
+US002 Task 009 - add in health bar - 3 pts
 
 US004 Task 010 - add in the tank object for character use
 
