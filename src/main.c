@@ -648,7 +648,7 @@ int hit_test(
             continue;
         }
         int hx, hy, hz;
-        int hw = _hit_test(&chunk->map, 8, previous,
+        int hw = _hit_test(&chunk->map, 64, previous,
             x, y, z, vx, vy, vz, &hx, &hy, &hz);
         if (hw > 0) {
             float d = sqrtf(
@@ -2137,13 +2137,35 @@ void on_light() {
     }
 }
 
+void blow_up(int x, int y, int z) {
+    for(int i=-1; i<2; i++) {
+        for(int j=-1; j<2; j++) {  
+            for(int k=-1; k<2; k++) {
+                int count = 0;
+                if(i==0)
+                    count++;
+                if(j==0)
+                    count++;
+                if(k==0)
+                    count++;
+                if(count > 1) {
+                    set_block(x+i, y+j, z+k, 0);
+                    record_block(x+i, y+j, z+k, 0);
+                }
+            }
+        }
+    }
+    
+}
+
 void on_left_click() {
     State *s = &g->players->state;
     int hx, hy, hz;
     int hw = hit_test(0, s->x, s->y, s->z, s->rx, s->ry, &hx, &hy, &hz);
     if (hy > 0 && hy < 256 && is_destructable(hw)) {
-        set_block(hx, hy, hz, 0);
-        record_block(hx, hy, hz, 0);
+        //set_block(hx, hy, hz, 0);
+        //record_block(hx, hy, hz, 0);
+        blow_up(hx, hy, hz);
         if (is_plant(get_block(hx, hy + 1, hz))) {
             set_block(hx, hy + 1, hz, 0);
         }
@@ -2384,7 +2406,7 @@ void handle_mouse_input() {
     if (exclusive && (px || py)) {
         double mx, my;
         glfwGetCursorPos(g->window, &mx, &my);
-        float m = 0.0025;
+        float m = 0.000025;
         s->rx += (mx - px) * m;
         if (INVERT_MOUSE) {
             s->ry += (my - py) * m;
